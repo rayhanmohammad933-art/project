@@ -3,7 +3,7 @@ const totalQuestions = 3;
 let answers = {};
 let userName = '';
 
-document.getElementById('startBtn').addEventListener('click', startQuiz);
+document.getElementById('startBtn').addEventListener('click', startQuiz); 
 document.getElementById('nextBtn').addEventListener('click', nextQuestion);
 document.getElementById('submitBtn').addEventListener('click', submitQuiz);
 document.getElementById('sendToWhatsApp').addEventListener('click', sendToWhatsApp);
