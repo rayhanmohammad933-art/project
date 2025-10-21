@@ -1,61 +1,53 @@
-let currentQuestion = 1;
-const totalQuestions = 3;
-let answers = {};
-let userName = '';
+document.getElementById('submitBtn').addEventListener('click', submitForm);
 
-document.getElementById('startBtn').addEventListener('click', startQuiz); 
-document.getElementById('nextBtn').addEventListener('click', nextQuestion);
-document.getElementById('submitBtn').addEventListener('click', submitQuiz);
-document.getElementById('sendToWhatsApp').addEventListener('click', sendToWhatsApp);
+// Fungsi untuk menampilkan input tambahan jika "Ya" dipilih
+document.querySelectorAll('input[name="pengalaman"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const medsosCuan = document.getElementById('medsosCuan');
+        if (this.value === 'Ya') {
+            medsosCuan.style.display = 'block';
+        } else {
+            medsosCuan.style.display = 'none';
+        }
+    });
+});
 
-function startQuiz() {
-    const nameInput = document.getElementById('name');
-    if (!nameInput.value.trim()) {
-        alert('Masukkan nama dulu!');
+function submitForm() {
+    // Ambil nilai dari input
+    const nama = document.getElementById('nama').value.trim();
+    const kelas = document.getElementById('kelas').value.trim();
+    const noHp = document.getElementById('noHp').value.trim();
+    
+    // Media sosial
+    const medsosChecked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+    const medsosLain = document.getElementById('medsosLain').value.trim();
+    const medsos = medsosChecked.join(', ') + (medsosLain ? ', ' + medsosLain : '');
+    
+    // Pengalaman
+    const pengalaman = document.querySelector('input[name="pengalaman"]:checked');
+    const pengalamanValue = pengalaman ? pengalaman.value : '';
+    const medsosCuanDetail = document.getElementById('medsosCuanDetail').value.trim();
+    const pengalamanFull = pengalamanValue === 'Ya' ? `Ya, di: ${medsosCuanDetail}` : pengalamanValue;
+    
+    // Tim
+    const tim = document.querySelector('input[name="tim"]:checked');
+    const timValue = tim ? tim.value : '';
+    
+    // Aktif
+    const aktif = document.querySelector('input[name="aktif"]:checked');
+    const aktifValue = aktif ? aktif.value : '';
+    
+    // Validasi: Pastikan semua wajib diisi
+    if (!nama || !kelas || !noHp || !medsos || !pengalamanValue || !timValue || !aktifValue) {
+        alert('Isi semua pertanyaan dengan lengkap!');
         return;
     }
-    userName = nameInput.value;
-    document.getElementById('nameInput').style.display = 'none';
-    document.getElementById('quiz').style.display = 'block';
-}
-
-function nextQuestion() {
-    const answerInput = document.getElementById(`answer${currentQuestion}`);
-    if (!answerInput.value.trim()) {
-        alert('Isi jawaban dulu!');
-        return;
-    }
     
-    answers[`q${currentQuestion}`] = answerInput.value;
+    // Buat pesan WhatsApp
+    const message = `Pendaftaran Event:\nNama: ${nama}\nKelas: ${kelas}\nNo HP: ${noHp}\nMedia Sosial: ${medsos}\nPengalaman Mengelola Medsos: ${pengalamanFull}\nMampu Bekerja Tim: ${timValue}\nSiap Aktif: ${aktifValue}`;
     
-    document.getElementById(`q${currentQuestion}`).style.display = 'none';
-    currentQuestion++;
-    
-    if (currentQuestion <= totalQuestions) {
-        document.getElementById(`q${currentQuestion}`).style.display = 'block';
-    } else {
-        document.getElementById('nextBtn').style.display = 'none';
-        document.getElementById('submitBtn').style.display = 'block';
-    }
-}
-
-function submitQuiz() {
-    document.getElementById('quiz').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
-    
-    let summary = `Nama: ${userName}\n`;
-    for (let i = 1; i <= totalQuestions; i++) {
-        summary += `Pertanyaan ${i}: ${answers[`q${i}`]}\n`;
-    }
-    document.getElementById('answersSummary').textContent = summary;
-}
-
-function sendToWhatsApp() {
-    let message = `Jawaban Kuis Pendaftaran:\nNama: ${userName}\n`;
-    for (let i = 1; i <= totalQuestions; i++) {
-        message += `Pertanyaan ${i}: ${answers[`q${i}`]}\n`;
-    }
-    const phoneNumber = '1234567890'; // Ganti dengan nomor WhatsApp tujuan (tanpa +)
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    // Kirim ke WhatsApp
+    const phoneNumber = '6285236039799'; // Ganti dengan nomor WhatsApp tujuan (tanpa +)
+    const url = `https://wa.me/6285236039799${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
