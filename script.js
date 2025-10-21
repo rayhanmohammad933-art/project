@@ -47,7 +47,7 @@ function submitForm() {
     const message = `Pendaftaran Event:\nNama: ${nama}\nKelas: ${kelas}\nNo HP: ${noHp}\nMedia Sosial: ${medsos}\nPengalaman Mengelola Medsos: ${pengalamanFull}\nMampu Bekerja Tim: ${timValue}\nSiap Aktif: ${aktifValue}`;
     
     // Kirim ke WhatsApp
-    const phoneNumber = '6285236039799'; // Ganti dengan nomor WhatsApp tujuan (tanpa +)
-    const url = `https://wa.me/6285236039799${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phoneNumber = '6285606914493'; // Ganti dengan nomor WhatsApp tujuan (tanpa +)
+    const url = `https://wa.me/6285606914493${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
