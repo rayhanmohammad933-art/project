@@ -7,32 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+   <div class="container">
         <h1>Kuis Pendaftaran Event</h1>
-        <p>Jawab pertanyaan berikut untuk mendaftar!</p>
+        <p>Jawab pertanyaan berikut berdasarkan pendapat Anda!</p>
         
         <div id="quiz">
             <div class="question" id="q1">
-                <h3>1. Apa ibu kota Indonesia?</h3>
-                <label><input type="radio" name="q1" value="Jakarta"> Jakarta</label><br>
-                <label><input type="radio" name="q1" value="Surabaya"> Surabaya</label><br>
-                <label><input type="radio" name="q1" value="Bandung"> Bandung</label>
+                <h3>1. Apa pendapat Anda tentang teknologi masa depan?</h3>
+                <input type="text" id="answer1" placeholder="Tulis jawaban Anda di sini">
             </div>
             
             <div class="question" id="q2" style="display:none;">
-                <h3>2. Berapa hasil 2 + 2?</h3>
-                <label><input type="radio" name="q2" value="4"> 4</label><br>
-                <label><input type="radio" name="q2" value="5"> 5</label><br>
-                <label><input type="radio" name="q2" value="6"> 6</label>
+                <h3>2. Apa hobi favorit Anda?</h3>
+                <input type="text" id="answer2" placeholder="Tulis jawaban Anda di sini">
             </div>
             
             <div class="question" id="q3" style="display:none;">
-                <h3>3. Warna langit pada siang hari?</h3>
-                <label><input type="radio" name="q3" value="Biru"> Biru</label><br>
-                <label><input type="radio" name="q3" value="Merah"> Merah</label><br>
-                <label><input type="radio" name="q3" value="Hijau"> Hijau</label>
+                <h3>3. Mengapa Anda ingin mendaftar event ini?</h3>
+                <input type="text" id="answer3" placeholder="Tulis jawaban Anda di sini">
             </div>
-            
             <button id="nextBtn">Selanjutnya</button>
             <button id="submitBtn" style="display:none;">Kirim Jawaban</button>
         </div>
