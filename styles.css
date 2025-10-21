@@ -1,78 +1,46 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #0000ff, #800080); /* Nuansa biru ke ungu */
-    color: white;
-    margin: 0;
-    padding: 0;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
 }
 
-h1, h2, h3 {
-    color: #fff;
+h1 {
+    text-align: center;
+    color: #333;
 }
 
 .question {
     margin-bottom: 20px;
 }
 
-.option {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    background: #fff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.option:hover {
-    background: #ddd;
-}
-
-.hidden {
-    display: none;
-}
-
-#result, #registration {
-    margin-top: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input {
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-}
-button[type="submit"], #retry, #shareWhatsApp, #shareRegWhatsApp {
-    padding: 10px;
-    background: #4CAF50;
+button {
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-top: 10px;
-}
-button[type="submit"]:hover, #retry:hover, #shareWhatsApp:hover, #shareRegWhatsApp:hover {
-    background: #45a049;
+    border-radius: 4px;
+    width: 100%;
 }
 
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
