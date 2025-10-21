@@ -64,7 +64,7 @@ document.getElementById('regForm').addEventListener('submit', (e) => {
         // Nomor WhatsApp tujuan (ganti dengan nomor yang benar, format internasional tanpa +)
         const whatsappNumber = '6285236039799'; // Contoh: 628123456789
         // Buat URL WhatsApp dengan pesan
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/6285236039799${whatsappNumber}?text=${encodeURIComponent(message)}`;
         // Buka WhatsApp di tab baru
         window.open(whatsappUrl, '_blank');
     });
