@@ -3,38 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Pendaftaran</title>
+    <title>Form Pendaftaran</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <div class="container">
-        <h1>Kuis Pendaftaran Event</h1>
-        <p>Jawab pertanyaan berikut berdasarkan pendapat Anda!</p>
+    <div class="container">
+        <h1>Form Pendaftaran Event</h1>
+        <p>Isi semua data di bawah ini dengan lengkap!</p>
         
-        <div id="quiz">
-            <div class="question" id="q1">
-                <h3>1. Apa pendapat Anda tentang teknologi masa depan?</h3>
-                <input type="text" id="answer1" placeholder="Tulis jawaban Anda di sini">
+        <form id="registrationForm">
+            <div class="question">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" required>
             </div>
             
-            <div class="question" id="q2" style="display:none;">
-                <h3>2. Apa hobi favorit Anda?</h3>
-                <input type="text" id="answer2" placeholder="Tulis jawaban Anda di sini">
+            <div class="question">
+                <label for="kelas">Kelas:</label>
+                <input type="text" id="kelas" required>
             </div>
             
-            <div class="question" id="q3" style="display:none;">
-                <h3>3. Mengapa Anda ingin mendaftar event ini?</h3>
-                <input type="text" id="answer3" placeholder="Tulis jawaban Anda di sini">
+            <div class="question">
+                <label for="noHp">No HP:</label>
+                <input type="text" id="noHp" required>
             </div>
-            <button id="nextBtn">Selanjutnya</button>
-            <button id="submitBtn" style="display:none;">Kirim Jawaban</button>
-        </div>
-        
-        <div id="result" style="display:none;">
-            <h2>Hasil Kuis</h2>
-            <p id="score"></p>
-            <button id="sendToWhatsApp">Kirim ke WhatsApp</button>
-        </div>
+            
+            <div class="question">
+                <label>Media Sosial yang Dimiliki (pilih yang ada):</label>
+                <label><input type="checkbox" value="Shopee"> Shopee</label>
+                <label><input type="checkbox" value="TikTok"> TikTok</label>
+                <label><input type="checkbox" value="Instagram"> Instagram</label>
+                <label><input type="checkbox" value="Facebook"> Facebook</label>
+                <label><input type="checkbox" value="Twitter"> Twitter</label>
+                <label><input type="checkbox" value="YouTube"> YouTube</label>
+                <label>Lainnya: <input type="text" id="medsosLain" placeholder="Misal: LinkedIn"></label>
+            </div>
+            
+            <div class="question">
+                <label>Apakah sudah pernah mengelola medsos menjadi cuan?</label>
+                <label><input type="radio" name="pengalaman" value="Ya"> Ya</label>
+                <label><input type="radio" name="pengalaman" value="Tidak"> Tidak</label>
+                <div id="medsosCuan" style="display:none;">
+                    <label>Jika ya, di medsos apa?</label>
+                    <input type="text" id="medsosCuanDetail">
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>Apakah mampu bekerja bersama tim?</label>
+                <label><input type="radio" name="tim" value="Ya"> Ya</label>
+                <label><input type="radio" name="tim" value="Tidak"> Tidak</label>
+            </div>
+            
+            <div class="question">
+                <label>Apakah siap aktif mengikuti acara dan latihan rutin ekstra?</label>
+                <label><input type="radio" name="aktif" value="Ya"> Ya</label>
+                <label><input type="radio" name="aktif" value="Tidak"> Tidak</label>
+            </div>
+            
+            <button type="button" id="submitBtn">Kirim ke WhatsApp</button>
+        </form>
     </div>
     
     <script src="script.js"></script>
