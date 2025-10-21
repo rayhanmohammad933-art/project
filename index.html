@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Interaktif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-section" class="section active">
+        <h1>Kuis Pra-Pendaftaran (<span id="question-number">1</span> dari <span id="total-questions">4</span>)</h1>
+        <p>Jawab kuis berikut untuk melanjutkan pendaftaran.</p>
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div class="options">
+                <label><input type="radio" name="answer" value="A"> <span id="option-a"></span></label>
+                <label><input type="radio" name="answer" value="B"> <span id="option-b"></span></label>
+                <label><input type="radio" name="answer" value="C"> <span id="option-c"></span></label>
+                <label><input type="radio" name="answer" value="D"> <span id="option-d"></span></label>
+            </div>
+        </div>
+        <p id="validation-message" class="error" style="display: none;">Silakan pilih jawaban sebelum melanjutkan.</p>
+        <div class="buttons">
+            <button id="prev-btn" disabled>Sebelumnya</button>
+            <button id="next-btn">Selanjutnya</button>
+        </div>
+    </div>
+
+    <div id="registration-section" class="section">
+        <h1>Formulir Pendaftaran</h1>
+        <form id="registration-form">
+            <label for="full-name">Nama Lengkap:</label>
+            <input type="text" id="full-name" required>
+
+            <label for="class-major">Kelas / Jurusan:</label>
+            <input type="text" id="class-major" required>
+
+            <label for="phone">Nomor Handphone Aktif:</label>
+            <input type="tel" id="phone" required>
+
+            <label>Apakah sudah pernah mengelola media sosial secara profesional/organisasi?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="social-media" value="Ya" required> Ya</label>
+                <label><input type="radio" name="social-media" value="Tidak" required> Tidak</label>
+            </div>
+
+            <button type="submit">Daftar Sekarang</button>
+        </form>
+    </div>
+
+    <div id="success-section" class="section">
+        <div class="success-icon">✅</div>
+        <h1>Pendaftaran Berhasil!</h1>
+        <p id="thank-you-message"></p>
+        <p id="quiz-summary"></p>
+        <button id="reset-btn">Kembali ke Awal</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
