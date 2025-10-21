@@ -8,64 +8,42 @@
 </head>
 <body>
     <div class="container">
-        <h1>Kuis Pendaftaran</h1>
-        <p>Jawab pertanyaan berikut untuk melanjutkan pendaftaran. Minimal 3 jawaban benar!</p>
+        <h1>Kuis Pendaftaran Event</h1>
+        <p>Jawab pertanyaan berikut untuk mendaftar!</p>
         
         <div id="quiz">
             <div class="question" id="q1">
                 <h3>1. Apa ibu kota Indonesia?</h3>
-                <button class="option" data-answer="Jakarta">Jakarta</button>
-                <button class="option" data-answer="Surabaya">Surabaya</button>
-                <button class="option" data-answer="Bandung">Bandung</button>
+                <label><input type="radio" name="q1" value="Jakarta"> Jakarta</label><br>
+                <label><input type="radio" name="q1" value="Surabaya"> Surabaya</label><br>
+                <label><input type="radio" name="q1" value="Bandung"> Bandung</label>
             </div>
-            <!-- Tambahkan pertanyaan lain di sini -->
-            <div class="question hidden" id="q2">
+            
+            <div class="question" id="q2" style="display:none;">
                 <h3>2. Berapa hasil 2 + 2?</h3>
-                <button class="option" data-answer="4">4</button>
-                <button class="option" data-answer="5">5</button>
-                <button class="option" data-answer="3">3</button>
+                <label><input type="radio" name="q2" value="4"> 4</label><br>
+                <label><input type="radio" name="q2" value="5"> 5</label><br>
+                <label><input type="radio" name="q2" value="6"> 6</label>
             </div>
-            <div class="question hidden" id="q3">
-                <h3>3. Apa warna langit pada siang hari?</h3>
-                <button class="option" data-answer="Biru">Biru</button>
-                <button class="option" data-answer="Merah">Merah</button>
-                <button class="option" data-answer="Hijau">Hijau</button>
+            
+            <div class="question" id="q3" style="display:none;">
+                <h3>3. Warna langit pada siang hari?</h3>
+                <label><input type="radio" name="q3" value="Biru"> Biru</label><br>
+                <label><input type="radio" name="q3" value="Merah"> Merah</label><br>
+                <label><input type="radio" name="q3" value="Hijau"> Hijau</label>
             </div>
-            <div class="question hidden" id="q4">
-                <h3>4. Siapa presiden pertama Indonesia?</h3>
-                <button class="option" data-answer="Soekarno">Soekarno</button>
-                <button class="option" data-answer="Suharto">Suharto</button>
-                <button class="option" data-answer="Jokowi">Jokowi</button>
-            </div>
-            <div class="question hidden" id="q5">
-                <h3>5. Apa nama planet kita?</h3>
-                <button class="option" data-answer="Bumi">Bumi</button>
-                <button class="option" data-answer="Mars">Mars</button>
-                <button class="option" data-answer="Venus">Venus</button>
-            </div>
+            
+            <button id="nextBtn">Selanjutnya</button>
+            <button id="submitBtn" style="display:none;">Kirim Jawaban</button>
         </div>
         
-        <div id="result" class="hidden">
+        <div id="result" style="display:none;">
             <h2>Hasil Kuis</h2>
             <p id="score"></p>
-            <button id="retry">Coba Lagi</button>
-        </div>
-        
-        <div id="registration" class="hidden">
-            <h2>Form Pendaftaran</h2>
-            <form id="regForm">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <label for="phone">Telepon:</label>
-                <input type="tel" id="phone" required> 
-                <button type="submit">Daftar</button>
-            </form>
-             <button id="shareRegWhatsApp" class="hidden">Kirim Data ke WhatsApp</button>
+            <button id="sendToWhatsApp">Kirim ke WhatsApp</button>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
-</html>               
-       
+</html>
