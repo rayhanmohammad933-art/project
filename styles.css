@@ -63,8 +63,7 @@ input {
     border: none;
     border-radius: 5px;
 }
-
-button[type="submit"], #retry {
+button[type="submit"], #retry, #shareWhatsApp, #shareRegWhatsApp {
     padding: 10px;
     background: #4CAF50;
     color: white;
@@ -73,7 +72,7 @@ button[type="submit"], #retry {
     cursor: pointer;
     margin-top: 10px;
 }
-
-button[type="submit"]:hover, #retry:hover {
+button[type="submit"]:hover, #retry:hover, #shareWhatsApp:hover, #shareRegWhatsApp:hover {
     background: #45a049;
 }
+
