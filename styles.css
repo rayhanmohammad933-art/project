@@ -1,5 +1,79 @@
-.nuansa {
-    background: linear-gradient(to right, #0000ff, #800080); /* Gradien horizontal dari biru ke ungu */
-    height: 200px; /* Tinggi elemen */
-    width: 100%; /* Lebar penuh */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0000ff, #800080); /* Nuansa biru ke ungu */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.option:hover {
+    background: #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+#result, #registration {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button[type="submit"], #retry {
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover, #retry:hover {
+    background: #45a049;
 }
