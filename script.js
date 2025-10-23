@@ -48,6 +48,6 @@ function submitForm() {
     
     // Kirim ke WhatsApp
     const phoneNumber = '6285606914493'; // Ganti dengan nomor WhatsApp tujuan (tanpa +)
-    const url = `https://wa.me/6285606914493${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
