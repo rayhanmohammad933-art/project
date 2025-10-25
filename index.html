@@ -3,67 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pendaftaran</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>QuizCerdas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Form Pendaftaran Bisnis Digital</h1>
-        <p>Isi semua data di bawah ini dengan lengkap!</p>
-        
-        <form id="registrationForm">
-            <div class="question">
-                <label for="nama">Nama Lengkap:</label>
-                <input type="text" id="nama" required>
-            </div>
-            
-            <div class="question">
-                <label for="kelas">Kelas:</label>
-                <input type="text" id="kelas" required>
-            </div>
-            
-            <div class="question">
-                <label for="noHp">No HP:</label>
-                <input type="text" id="noHp" required>
-            </div>
-            
-            <div class="question">
-                <label>Media Sosial yang Dimiliki (pilih yang ada):</label>
-                <label><input type="checkbox" value="Shopee"> Shopee</label>
-                <label><input type="checkbox" value="TikTok"> TikTok</label>
-                <label><input type="checkbox" value="Instagram"> Instagram</label>
-                <label><input type="checkbox" value="Facebook"> Facebook</label>
-                <label><input type="checkbox" value="Twitter"> Twitter</label>
-                <label><input type="checkbox" value="YouTube"> YouTube</label>
-                <label>Lainnya: <input type="text" id="medsosLain" placeholder="Misal: LinkedIn"></label>
-            </div>
-            
-            <div class="question">
-                <label>Apakah sudah pernah mengelola medsos menjadi cuan?</label>
-                <label><input type="radio" name="pengalaman" value="Ya"> Ya</label>
-                <label><input type="radio" name="pengalaman" value="Tidak"> Tidak</label>
-                <div id="medsosCuan" style="display:none;">
-                    <label>Jika ya, di medsos apa?</label>
-                    <input type="text" id="medsosCuanDetail">
+    <div id="app">
+        <!-- Halaman Input Data -->
+        <div id="input-page" class="page">
+            <h1>QuizCerdas</h1>
+            <p>Masukkan data Anda untuk memulai!</p>
+            <form id="user-form">
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="number" id="age" placeholder="Umur" required>
+                <input type="text" id="hobby" placeholder="Hobi" required>
+                <button type="submit">Mulai Quiz</button>
+            </form>
+        </div>
+
+        <!-- Halaman Kategori -->
+        <div id="category-page" class="page hidden">
+            <h1>Selamat Datang, <span id="user-name"></span>!</h1>
+            <div class="categories">
+                <div class="category" data-category="penalaran">
+                    <h2>Penalaran Umum</h2>
+                    <p>Soal tentang penalaran umum</p>
+                    <button class="start-btn">Masuk Soal</button>
+                </div>
+                <div class="category" data-category="literasi">
+                    <h2>Literasi B. Indonesia</h2>
+                    <p>Soal tentang literasi dan bahasa Indonesia</p>
+                    <button class="start-btn">Masuk Soal</button>
+                </div>
+                <div class="category" data-category="logika">
+                    <h2>Logika Berjalan</h2>
+                    <p>Soal yang mengasah logika</p>
+                    <button class="start-btn">Masuk Soal</button>
+                </div>
+                <div class="category" data-category="tebak">
+                    <h2>Tebak Tebakan Random</h2>
+                    <p>Soal tebak tebakan absurd, random, kocak, dan lucu</p>
+                    <button class="start-btn">Masuk Soal</button>
                 </div>
             </div>
-            
-            <div class="question">
-                <label>Apakah mampu bekerja bersama tim?</label>
-                <label><input type="radio" name="tim" value="Ya"> Ya</label>
-                <label><input type="radio" name="tim" value="Tidak"> Tidak</label>
+            <div class="footer-category">
+                <button id="instagram-btn">Sapa Pencipta lewat Instagram</button>
             </div>
-            
-            <div class="question">
-                <label>Apakah siap aktif mengikuti acara dan latihan rutin ekstra?</label>
-                <label><input type="radio" name="aktif" value="Ya"> Ya</label>
-                <label><input type="radio" name="aktif" value="Tidak"> Tidak</label>
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <!-- Halaman Quiz -->
+        <div id="quiz-page" class="page hidden">
+            <div id="timer" class="timer">Waktu: <span id="time-left">10:00</span></div>
+            <div id="question-container">
+                <h2 id="question"></h2>
+                <div id="options"></div>
+                <button id="next-btn" class="hidden">Soal Berikutnya</button>
             </div>
-            
-            <button type="button" id="submitBtn">Kirim ke WhatsApp</button>
-        </form>
+            <div id="result" class="hidden">
+                <h2>Skor Anda: <span id="score"></span>/30</h2>
+                <button id="back-to-categories">Kembali ke Kategori</button>
+            </div>
+        </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
