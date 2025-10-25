@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizCerdas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
@@ -14,7 +14,7 @@
             <p>Masukkan data Anda untuk memulai!</p>
             <form id="user-form">
                 <input type="text" id="name" placeholder="Nama" required>
-                <input type="number" id="age" placeholder="Umur" required>
+                <input type="text" id="age" placeholder="Umur (angka saja)" pattern="[0-9]+" title="Masukkan angka saja" required>
                 <input type="text" id="hobby" placeholder="Hobi" required>
                 <button type="submit">Mulai Quiz</button>
             </form>
