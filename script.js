@@ -298,19 +298,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Category buttons
-    categories.forEach(cat => {
-        cat.addEventListener('click', (e) => {
-            if (e.target.classList.contains('start-btn')) {
-                currentCategory = cat.dataset.category;
-                questions = allQuestions[currentCategory];
-                currentQuestionIndex = 0;
-                score = 0;
-                timeLeft = 600;
-                showQuizPage();
-            }
-        });
+    startBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        currentCategory = btn.closest('.category').dataset.category;  // Tambahan: ambil kategori dari div induk
+        questions = allQuestions[currentCategory];
+        currentQuestionIndex = 0;
+        score = 0;
+        timeLeft = 600;
+        showQuizPage();
     });
+});
 
     // Instagram button
     instagramBtn.addEventListener('click', () => {
